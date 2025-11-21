@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <h1>FCM PWA Vue 3</h1>
+    <h1>FCM PWA Vue 3 - Sample Notification</h1>
     <button @click="requestPermission">Enable Notifications</button>
     <div v-if="token">
       <p>Token: {{ token }}</p>
