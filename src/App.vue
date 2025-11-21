@@ -4,6 +4,7 @@
     <button @click="requestPermission">Enable Notifications</button>
     <div v-if="token">
       <p>Token: {{ token }}</p>
+      <button type="button" @click="copyToken">Copy Token</button>
     </div>
   </div>
 </template>
@@ -86,6 +87,15 @@ export default {
       requestPermission,
       copyToken
     };
-  }
+  },
+  methods: {
+    copyToken: function(token) {
+      navigator.clipboard.writeText(token).then(function() {
+        alert('Token copied to clipboard!');
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    }
+  },
 };
 </script>
